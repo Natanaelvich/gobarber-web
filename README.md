@@ -1,4 +1,8 @@
+
 <h1 align='center'>Barber Manage</h1>
+<h5 align='center'>barber shop manager</h5>
+
+
 
 <h4 align='center'>Login</h4>
 <p align="center">
