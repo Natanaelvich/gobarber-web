@@ -50,5 +50,12 @@
     "import",
     "react-hooks",
     "prettier"
-  ]
+  ],
+  "settings": {
+    "import/resolver": {
+      "babel-plugin-root-import": {
+        "rootPathSuffix": "src"
+      }
+    }
+  }
 }
