@@ -20,7 +20,7 @@ body{
   -webkit-font-smoothing: antialiased !important;
 }
 body,input,button{
-   font-size : 14px;
+  font-size : 14px;
   font-family: 'Roboto', sans-serif;
 }
 
