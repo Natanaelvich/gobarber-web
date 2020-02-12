@@ -1,1 +1,1 @@
-<h1 align='center'>Manager to Barber</h1>
+<h1 align='center'>Barber Manage</h1>
