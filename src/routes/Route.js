@@ -3,6 +3,9 @@ import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import PropsTypes from 'prop-types';
 
+import AuthLayout from '../pages/_Layouts/auth';
+import Defaulayout from '../pages/_Layouts/default';
+
 function RouteWrapper({ component: Component, isPrivate = false, ...rest }) {
   const signed = false;
 
@@ -14,7 +17,18 @@ function RouteWrapper({ component: Component, isPrivate = false, ...rest }) {
     return <Redirect to="/dashboard" />;
   }
 
-  return <Route {...rest} component={Component} />;
+  const Layout = signed ? Defaulayout : AuthLayout;
+
+  return (
+    <Route
+      {...rest}
+      render={props => (
+        <Layout>
+          <Component {...props} />
+        </Layout>
+      )}
+    />
+  );
 }
 
 RouteWrapper.propTypes = {
