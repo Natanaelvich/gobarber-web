@@ -6,8 +6,14 @@ import PropsTypes from 'prop-types';
 import AuthLayout from '~/pages/_Layouts/auth';
 import Defaulayout from '~/pages/_Layouts/default';
 
-function RouteWrapper({ component: Component, isPrivate = false, ...rest }) {
-  const signed = false;
+import store from '~/store';
+
+function RouteWrapper({
+  component: Component,
+  isPrivate = false,
+  ...rest
+}) {
+  const { signed } = store.getState().auth;
 
   if (!signed && isPrivate) {
     return <Redirect to="/" />;
@@ -33,7 +39,10 @@ function RouteWrapper({ component: Component, isPrivate = false, ...rest }) {
 
 RouteWrapper.propTypes = {
   isPrivate: PropsTypes.bool.isRequired,
-  component: PropsTypes.oneOfType([PropsTypes.element, PropsTypes.func]).isRequired,
+  component: PropsTypes.oneOfType([
+    PropsTypes.element,
+    PropsTypes.func,
+  ]).isRequired,
 };
 
 RouteWrapper.defaulProps = {
