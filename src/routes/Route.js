@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
@@ -8,11 +9,7 @@ import Defaulayout from '~/pages/_Layouts/default';
 
 import { store } from '~/store';
 
-function RouteWrapper({
-  component: Component,
-  isPrivate = false,
-  ...rest
-}) {
+function RouteWrapper({ component: Component, isPrivate, ...rest }) {
   const { signed } = store.getState().auth;
 
   if (!signed && isPrivate) {
@@ -38,7 +35,7 @@ function RouteWrapper({
 }
 
 RouteWrapper.propTypes = {
-  isPrivate: PropsTypes.bool.isRequired,
+  isPrivate: PropsTypes.bool,
   component: PropsTypes.oneOfType([
     PropsTypes.element,
     PropsTypes.func,
