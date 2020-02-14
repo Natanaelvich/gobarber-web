@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { Container, Content, Profile } from './styles';
 
+import Notifications from '~/components/Notifications';
 import logo from '~/assets/bigode.svg';
 
 export default function Dashboard() {
@@ -15,6 +16,7 @@ export default function Dashboard() {
         </nav>
 
         <aside>
+          <Notifications />
           <Profile>
             <div>
               <strong>Natanael lima</strong>
