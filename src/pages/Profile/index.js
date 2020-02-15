@@ -1,23 +1,21 @@
 import React from 'react';
-import * as Yup from 'yup';
+import { useSelector, useDispatch } from 'react-redux';
 import { Form, Input } from '@rocketseat/unform';
 
-import { useSelector } from 'react-redux';
 import { Container } from './Styles';
-
-const schema = Yup.object().shape({
-  name: Yup.string(),
-  email: Yup.string().email('Insira um email valido'),
-  password: Yup.string(),
-  oldPassword: Yup.string(),
-  cofirmPassword: Yup.string(),
-});
+import { updateProfleRequest } from '~/store/modules/user/actions';
 
 export default function Profile() {
+  const dispatch = useDispatch();
   const profile = useSelector(state => state.user.profile);
+
+  function handleSubmit(data) {
+    dispatch(updateProfleRequest(data));
+  }
+
   return (
     <Container>
-      <Form initialData={profile} schema={schema}>
+      <Form onSubmit={handleSubmit} initialData={profile}>
         <Input name="name" placeholder="Nome completo" />
         <Input
           name="email"
@@ -43,7 +41,7 @@ export default function Profile() {
 
         <button type="submit">Atualizar perfil</button>
       </Form>
-      <button type="submit">Sair do Gobarber</button>
+      <button type="button">Sair do Gobarber</button>
     </Container>
   );
 }
