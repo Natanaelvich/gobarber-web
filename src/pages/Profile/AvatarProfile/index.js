@@ -44,12 +44,12 @@ export default function AvatarProfile() {
             preview ||
             'https://api.adorable.io/avatars/50/abott@adorable.png'
           }
-          alt=""
+          alt="Selecione uma imagem"
         />
         <input
-          data-file={file}
           type="file"
           id="avatar"
+          data-file={file}
           onChange={handleChange}
           ref={ref}
         />

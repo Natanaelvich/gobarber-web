@@ -171,3 +171,5 @@
 [0215/001424.738:ERROR:crash_report_database_win.cc(469)] failed to stat report
 [0215/001424.739:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Tentou-se acessar um processo de saída. (0xc000010a)
 [0215/001435.134:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0215/014240.309:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0215/021232.541:ERROR:crash_report_database_win.cc(469)] failed to stat report

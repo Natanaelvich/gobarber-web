@@ -11,6 +11,7 @@ export function* updateProfile({ payload }) {
       name,
       email,
       avatar_id,
+
       ...(rest.oldPassword ? rest : {}),
     };
 
