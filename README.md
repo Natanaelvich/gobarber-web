@@ -17,7 +17,7 @@ For development, you will only need Node.js installed on your environement.
 
 ## Start & watch
 
-    $ npm android or ios
+    $ npm start
 
 
 ## Update sources
